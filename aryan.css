@@ -1,76 +1,120 @@
-/* Add styles for hover cards */
+ 
+body {
+     
+    background-color: #7a7adb;
+    background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
+    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-.hover-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+header, main, footer {
     padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
+}
+ 
+header {
+    
+    color: white;
+    font-family:cursive;
+    font-weight: 200;
+    
+}
+#intro{
+    color: white;
+    margin: auto;
+    margin-left: 45%;
+    font-size: xx-large;
+   
+}
+ 
+h1, h2 {
+    color: white;
+}
+ 
+.hover-card {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.hover-card:hover {
-    transform: translateY(-10px);
-}
-
-.hover-card-content {
-    text-align: center;
-}
-
-.hover-card h2 {
-    margin-bottom: 10px;
-}
-
-.hover-card p {
-    margin-bottom: 20px;
-}
-
-/* Add styles for confetti animation */
-
-.confetti-container {
-    position: fixed;
+.hover-card::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ffbc00;
-    pointer-events: none;
-    animation: confetti-fall 2s ease-out infinite;
+.hover-card:hover {
+    transform: translateY(-5px);
 }
 
-@keyframes confetti-fall {
-    0% {
-        transform: translate(0, 0) rotate(0);
-    }
-    100% {
-        transform: translate(150%, 100vh) rotate(720deg);
-    }
+.hover-card:hover::before {
+    opacity: 1;
 }
 
-/* Add styles for button animation */
-
-.button-animation {
-    animation: button-scale 0.5s ease-out;
+.hover-card-content {
+    position: relative;
+    z-index: 1;
+    color: black;
+    padding: 20px;
 }
 
-@keyframes button-scale {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+/* Hover Card Color Variations */
+.hover-card--red {
+    background-color: #36096d;
+background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    
+}
+
+.hover-card--green {
+    background-color: #36096d;
+background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    margin-top: 2%;
+}
+
+.hover-card--blue {
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    margin-top: 2%;
+}
+
+ 
+.btn {
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: white;
+}
+
+ 
+.btn--red {
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+
+}
+
+
+#end{
+    font-size: xx-large;
+}
+footer {
+    
+    color: white;
+    padding: 20px;
 }

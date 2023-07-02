@@ -4,33 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="aryan.css">
+    <link rel="stylesheet" href="yolo.css">
+    <script src="sand.js" defer></script>
 </head>
 <body>
     <header>
         <div id="intro">WELCOME</div>
-       
+        <h2>About Me</h2>
     </header>
+    <div class="floating-container"></div>
     <main>
-        
         <div class="hover-card hover-card--red">
             <div class="hover-card-content">
                 <h2>Introduction</h2>
-                <p>Hello, my name is Shaun. I am a passionate web developer with a keen interest in technology and programming. I enjoy creating dynamic and user-friendly websites.</p>
+                <p style="font-size: 20px;">Hello, my name is Shaun. I am a passionate web developer with a keen interest in technology, programming and photography. I enjoy creating beautiful and user-friendly websites. I am pursuing my B-tech from <a href="https://en.wikipedia.org/wiki/IIT_(BHU)_Varanasi">IIT-BHU</a>. I belong to <a href="https://en.wikipedia.org/wiki/Metallurgy">Metallurgy</a> Department.</p>
+                <div class="row">
+                    <div class="column">
+                      <img src="http://surl.li/byrjm" alt="boat">
+                    </div>
+                    <div class="column">
+                      <img src="https://shorturl.at/BEMRU" alt="water" >
+                    </div>
+                    <div class="column">
+                      <img src="https://shorturl.at/HKTUY" alt="water" >
+                    </div>
+                  </div>
+                <!-- <img src="http://surl.li/byrjm" alt="Profile Picture"> -->
+               
             </div>
         </div>
 
         <div class="hover-card hover-card--green">
             <div class="hover-card-content">
                 <h2>Skills</h2>
+                <br>
+        <div class="row">
+                <div class="column">
                 <ul>
                     <li>HTML5</li>
+                    
                     <li>CSS3</li>
+                    
                     <li>JavaScript</li>
+                    
                     <li>Python</li>
+                    
                     <li>C++</li>
+
+                    
                 </ul>
+                </div>
                 
+
+                   
+        </div>
+    
+                <button class="btn btn--green" id="skill-level">Change Color</button>
             </div>
         </div>
 
@@ -38,17 +67,20 @@
             <div class="hover-card-content">
                 <h2>Experience</h2>
                 <ul>
-                    <li>Web Developer </li>
-                    <li>IIT ian</li>
+                    <li>Web Development</li>
+                    <li>Competitive Programming</li>
+
                 </ul>
+                
             </div>
         </div>
+        <div style="font-size: x-large;">You can connect with me:  <a href="https://www.linkedin.com/feed/">Linkedin</a></div>
     </main>
     <footer>
-        
-        <button  class="btn btn--red">Download Resume</button>
-        
+        <button class="btn btn--red" id="resume-btn">Download Resume</button>
+        <p>&copy; Thank You</p>
         
     </footer>
+     
 </body>
 </html>
