@@ -19,14 +19,15 @@ function changePageColors() {
     var hoverCards = document.getElementsByClassName('hover-card');
 
      
-    var bgColor = colors[Math.floor(Math.random() * colors.length)];
+    // var bgColor = colors[Math.floor(Math.random() * colors.length)];
     var cardColor = colors[Math.floor(Math.random() * colors.length)];
 
     
-    body.style.backgroundColor = bgColor;
+    //body.style.backgroundColor = cardColor;
 
     
     for (var i = 0; i < hoverCards.length; i++) {
+        body.style.hoverCards = cardColor;
         hoverCards[i].style.backgroundColor = cardColor;
     }
 }
