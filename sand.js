@@ -78,6 +78,25 @@ function createFloatingElement() {
 }
 
 
-for (var i = 0; i < 150; i++) {
+for (var i = 0; i < 100; i++) {
     createFloatingElement();
 }
+ 
+
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    const element = document.getElementById('embed-iframe');
+    const options = {
+      width: '100%',
+      height: '200',
+    uri: 'https://open.spotify.com/artist/2oSONSC9zQ4UonDKnLqksx?si=yCIty90WQxWfdnLdlBv9CQ'
+    };
+    const callback = (EmbedController) => {
+      document.querySelectorAll('.episode').forEach(
+        episode => {
+          episode.addEventListener('click', () => {
+            EmbedController.loadUri(episode.dataset.spotifyId)
+          });
+        })
+    };
+    IFrameAPI.createController(element, options, callback);
+  };  
