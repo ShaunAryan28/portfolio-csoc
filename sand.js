@@ -1,36 +1,45 @@
- 
-document.getElementById('resume-btn').addEventListener('click', function() {
-    alert('Resume downloaded!'); 
-});
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    const element = document.getElementById('embed-iframe');
+    const options = {
+      width: '100%',
+      height: '200',
+    uri: 'https://open.spotify.com/artist/2oSONSC9zQ4UonDKnLqksx?si=yCIty90WQxWfdnLdlBv9CQ'
+    };
+    const callback = (EmbedController) => {
+      document.querySelectorAll('.episode').forEach(
+        episode => {
+          episode.addEventListener('click', () => {
+            EmbedController.loadUri(episode.dataset.spotifyId)
+          });
+        })
+    };
+    IFrameAPI.createController(element, options, callback);
+  };  
 
  
-document.getElementById('skill-level').addEventListener('click', function() {
-    
-    var selectedLevel = this.textContent;
-    console.log('Selected skill level:', selectedLevel);
-   
-     changePageColors();
+
+const hoverCards = document.querySelectorAll('.hover-card');
+
+hoverCards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    const randomColor = getRandomColor();
+    card.style.backgroundColor = randomColor;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.backgroundColor = '#f1f1f1';
+  });
 });
-    
-  
-function changePageColors() {
-    var colors = ['#ff0000', '#00ff00', '#0000ff','#f0f0ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8000', '#8000ff', '#00ff80', '#ff0080', '#80ff00', '#0080ff'];
-    var body = document.body;
-    var hoverCards = document.getElementsByClassName('hover-card');
 
-     
-    // var bgColor = colors[Math.floor(Math.random() * colors.length)];
-    var cardColor = colors[Math.floor(Math.random() * colors.length)];
-
-    
-    //body.style.backgroundColor = cardColor;
-
-    
-    for (var i = 0; i < hoverCards.length; i++) {
-        body.style.hoverCards = cardColor;
-        hoverCards[i].style.backgroundColor = cardColor;
-    }
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
+
  
 function createFloatingElement() {
     var colors = [ '#ff0000', '#00ff00', '#0000ff', '#ffff00','#ff00ff', '#00ffff', '#ff4500', '#00ff7f', '#8a2be2', '#ff8c00',
@@ -82,21 +91,5 @@ for (var i = 0; i < 100; i++) {
     createFloatingElement();
 }
  
+ 
 
-window.onSpotifyIframeApiReady = (IFrameAPI) => {
-    const element = document.getElementById('embed-iframe');
-    const options = {
-      width: '100%',
-      height: '200',
-    uri: 'https://open.spotify.com/artist/2oSONSC9zQ4UonDKnLqksx?si=yCIty90WQxWfdnLdlBv9CQ'
-    };
-    const callback = (EmbedController) => {
-      document.querySelectorAll('.episode').forEach(
-        episode => {
-          episode.addEventListener('click', () => {
-            EmbedController.loadUri(episode.dataset.spotifyId)
-          });
-        })
-    };
-    IFrameAPI.createController(element, options, callback);
-  };  
